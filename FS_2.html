@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Input Control</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        b {
+            font-size: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            color: #4CAF50;
+        }
+
+        p {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        form p a {
+            text-decoration: none;
+        }
+
+        form p a:hover {
+            text-decoration: underline;
+        }
+
+        form p:last-of-type {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent form from submitting to the server
+
+            // Get form fields
+            var password = document.forms["registrationForm"]["password"].value;
+            var repeatPassword = document.forms["registrationForm"]["rpassword"].value;
+            var email = document.forms["registrationForm"]["email"].value;
+
+            // Validate password matching
+            if (password !== repeatPassword) {
+                alert("Passwords do not match!");
+                return false;
+            }
+
+            // Validate email format
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address!");
+                return false;
+            }
+
+            // If all validations pass
+            alert("Registered successfully!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form name="registrationForm" onsubmit="validateForm(event)">
+        <b>USER REGISTRATION FORM</b>
+        <br><br>
+        Enter User name: <input type="text" name="user_name" required />
+        <br><br>
+        Enter Password: <input type="password" name="password" required />
+        <br><br>
+        Enter Email id: <input type="email" name="email" required />
+        <br><br>
+        Repeat Password: <input type="password" name="rpassword" required />
+        <br><br>
+        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+        <br><br>
+        <input type="submit" name="submit" value="Submit" />
+        <br><br>
+        <p>Already have an account? <a href="#">Sign in</a>.</p>
+    </form>
+</body>
+</html>
