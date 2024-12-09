@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Catalog</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Heading styling */
+        h1 {
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Genre list styling */
+        ol {
+            list-style-type: decimal;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        ol li {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        /* Table styling */
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Table header styling */
+        thead th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        /* Table cell styling */
+        tbody td {
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Alternating row colors */
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Link styling for book titles */
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Border color on table */
+        table {
+            border: 1px solid #4CAF50;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Book Catalog</h1>
+
+<!-- Genre List -->
+<ol>
+    <li>Fiction</li>
+    <li>Non-Fiction</li>
+    <li>Mystery</li>
+    <!-- Add more genres as needed -->
+</ol>
+
+<!-- Book Catalog Table -->
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="#">Book 1</a></td>
+            <td>Author 1</td>
+            <td>Fiction</td>
+            <td>2020</td>
+        </tr>
+        <tr>
+            <td><a href="#">Book 2</a></td>
+            <td>Author 2</td>
+            <td>Non-Fiction</td>
+            <td>2018</td>
+        </tr>
+       
+        <tr>
+            <td><a href="#">Book 3</a></td>
+            <td>Author 3</td>
+            <td>Mystery</td>
+            <td>2019</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
