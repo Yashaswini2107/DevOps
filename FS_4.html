@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Styling for the body */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Styling for the h1 */
+        h1 {
+            color: #4CAF50;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling for the factorial input form */
+        .calculator {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        /* Styling for the prompt input */
+        .prompt-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Styling for the button */
+        .calculate-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Button hover effect */
+        .calculate-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Styling for the alert box */
+        .alert {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #ff4d4d;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Factorial Calculator</h1>
+
+<div class="calculator">
+    <p>Enter a number to calculate its factorial:</p>
+
+    <!-- Prompt input from the user -->
+    <input type="text" class="prompt-input" id="numberInput" placeholder="Enter a number">
+
+    <!-- Button to trigger factorial calculation -->
+    <button class="calculate-button" onclick="calculate()">Calculate Factorial</button>
+
+    <!-- Result display -->
+    <div id="result" class="alert"></div>
+</div>
+
+<script>
+    // Function to calculate the factorial of a number
+    function calculateFactorial(number) {
+        if (number < 0) {
+            return "Please enter a non-negative integer.";
+        } else if (number === 0 || number === 1) {
+            return 1;
+        } else {
+            let factorial = 1;
+            for (let i = 2; i <= number; i++) {
+                factorial *= i;
+            }
+            return factorial;
+        }
+    }
+
+    // Function to get the input value, calculate, and display the result
+    function calculate() {
+        var n = document.getElementById("numberInput").value;
+        var result = calculateFactorial(parseInt(n));
+
+        // Display the result inside the 'result' div
+        document.getElementById("result").innerHTML = "Factorial: " + result;
+    }
+</script>
+
+</body>
+</html>
